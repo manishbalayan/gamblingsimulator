@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-primary text-gray-100 min-h-screen;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-button text-white hover:bg-opacity-90 active:bg-opacity-100;
+  }
+  
+  .btn-secondary {
+    @apply bg-neutral text-white hover:bg-opacity-90 active:bg-opacity-100;
+  }
+  
+  .btn-outlined {
+    @apply border border-neutral text-white hover:border-accent hover:text-accent;
+  }
+  
+  .chip {
+    @apply px-2 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .game-card {
+    @apply bg-card rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .input {
+    @apply bg-secondary border border-neutral rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-white;
+  }
+  
+  .sidebar-link {
+    @apply flex items-center gap-2 px-4 py-2 rounded-md transition-colors duration-200 hover:bg-secondary;
+  }
+  
+  .sidebar-link.active {
+    @apply bg-secondary text-accent;
+  }
+}
